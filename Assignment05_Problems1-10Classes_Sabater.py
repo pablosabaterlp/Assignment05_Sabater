@@ -45,8 +45,11 @@ class BasicMathOperations:
     #6 Define a method for numbers from A to B
     def nums(A, B):
         #print each number in the range from A to B
-        for i in range(A, B + 1):
-            print(i)
+        if A<B:
+            for i in range(A, B + 1):
+                print(i)
+        else:
+            print("Range does not work, try again.")
     
     #7 Define a method that computes the hypotenuse of a triangle, using Square function from above
     def hypotenuse(base, height):
@@ -127,5 +130,21 @@ def main():
             height = int(input("Input the height: "))
             #Print the area
             print(f"\nThe area for rectangle with width {width} and height {height} is {operation.areaRec(width, height)}.")
+        elif action == 9:
+            #Ask user for num and power numbers
+            num = int(input("Input the number: "))
+            power = int(input("Input the power: "))
+            #Print the power
+            print(f"\n{num} to the power of {power} is {operation.exponent(num, power)}.")
+        elif action == 10:
+            #Print the tyoe
+            arg = input("Enter an argument: ")
+            print(f"The type of the argument is: {operation.getType()}")
+        elif action == 11:
+            #Exit program
+            print("Exiting program...")
+            break
+        else:
+            print ("This action is not supported, please try again. \n")
     
 
